@@ -1,0 +1,17 @@
+.search-page-body{
+    width: 100%;
+    height: 100vh;
+    background: url("../../../public/Pictures/SearchPic.png");
+}
+
+.title-search{
+    font-family: 'Barlow', sans-serif;
+    position: absolute;
+    top: 5rem;
+    left: 25rem;
+}
+
+.title-search>p{
+    margin-top: 10px;
+    color: gray;
+}

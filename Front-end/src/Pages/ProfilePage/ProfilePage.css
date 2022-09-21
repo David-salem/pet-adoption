@@ -1,0 +1,122 @@
+.profile-page{
+    background-color: #FFFFFA;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.profile-page>h1{
+    position: absolute;
+    top: 7rem;
+    left: 10rem;
+    font-family: 'Barlow', sans-serif;
+}
+
+.profile-page>p{
+    position: absolute;
+    top: 10rem;
+    left: 10rem;
+    font-family: 'Barlow', sans-serif;
+    color: gray;
+}
+
+.pic-profilepage{
+    position: absolute;
+    top: 12rem;
+    left: 50rem;
+    height: 100px;
+    width: 400px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.pic-profilepage>div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.pic-profilepage>h2{
+    display: block;
+}
+
+.pic-profilepage>div>div>p{
+    display: block;
+    width: 200px;
+    margin: 20px;
+    padding-left: 10px;
+    border-radius: 10px;
+    background-color: #ff7f7d;
+    padding: 10px 10px 10px 40px;
+    cursor: pointer;
+    font-family: 'Barlow', sans-serif;
+    align-items: center;
+}
+
+.profile-page>form{
+    position: absolute;
+    left: 13rem;
+    top: 13rem;
+}
+
+.form-profile-signin{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-profile-signin>label, .add-bio>label{
+    display: flex;
+    font-family: 'Rockwell';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: capitalize;
+    margin: 0px;
+    color: gray;
+}
+
+.form-profile-signin>input{
+    width: 300px;
+    height: 50px;
+    margin: 10px;
+    padding: 10px;
+    outline: none;
+    color: black;
+    display: flex;
+    font-size: larger;
+    font-family: 'Barlow', sans-serif;
+}
+
+.add-bio{
+    position: absolute;
+    top: 12rem;
+    left: 38rem;
+}
+
+.add-bio>textarea{
+    width: 380px;
+    height: 150px;
+    resize: none;
+    margin-top: 20px;
+    outline: none;
+    font-family: 'Barlow', sans-serif;
+    font-size: larger;
+    padding: 5px;
+}
+
+.input-submit-profile{
+    position: absolute;
+    top: 28rem;
+    left: 19rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.input-submit-profile:hover{
+    background-color: black;
+    color: white;
+}

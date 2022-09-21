@@ -1,0 +1,14 @@
+.btn-signUp{
+    position: absolute;
+    top: 2rem;
+    right: 13rem;
+    border: none;
+    background-color: transparent;
+    color: red;
+    font-family: 'Barlow', sans-serif;
+    font-size: larger;
+    border: none;
+    z-index: 4;
+    cursor: pointer;
+    text-shadow: 2px 2px 5px white;
+}

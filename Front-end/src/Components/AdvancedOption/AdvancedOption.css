@@ -1,0 +1,11 @@
+.advance-box{
+    width: 700px;
+    height: 200px;
+    opacity: 0.7;
+    background-color: rgb(211, 243, 232);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    position: absolute;
+    top: 16.4rem;
+    left: 25rem;
+}

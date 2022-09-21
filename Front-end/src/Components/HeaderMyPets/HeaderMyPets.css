@@ -1,0 +1,27 @@
+.mypets-box{
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    font-family: 'Barlow', sans-serif;
+}
+
+.pic-mypets{
+    background-image: url("../../../public/Pictures/MainPic8.png");
+    height: 250px;
+    width: 300px;
+    background-size: 300px;
+    border-bottom: 2px faded white;
+    margin: 30px;
+}
+
+.mypets-box>div>p{
+    margin: 10px 5px 0 150px;
+    color:gray;
+}
+
+.mypets-box>div>a{
+    margin: 10px 0px;
+    color:gray;
+    text-decoration: none;
+    color: red;
+}

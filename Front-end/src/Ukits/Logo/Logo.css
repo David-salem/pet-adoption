@@ -1,0 +1,16 @@
+.icon-logo{
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    align-items: center;
+    margin: 20px 0 10px 50px;
+    color: #CC4E4D;
+}
+
+.icon-logo>p{
+    align-items: center;
+    width: 50px;
+    white-space: pre-wrap;
+    margin-left: 10px;
+    font-weight: bold;
+}

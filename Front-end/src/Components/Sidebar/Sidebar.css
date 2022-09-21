@@ -1,0 +1,64 @@
+.sidebar{
+    background-color: white;
+    color: red;
+    width: 80px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    -moz-box-shadow:    -1px 1px 3px 2px #555;
+    -webkit-box-shadow: -1px 1px 3px 2px #555;
+    box-shadow:         -1px 1px 3px 2px #555;
+    z-index: 4;
+}
+
+.sidebar>hr{
+    position: absolute;
+    width: 50px;
+    top: 6rem;
+    left: 1.1rem;
+    height: 2px;
+}
+
+.sidebar>div{
+    flex-direction: column;
+    color: #CC4E4D;
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.sidebar-personal{
+    height: 300px;
+    position: absolute;
+    top: 4.5rem;
+}
+
+.sidebar-socialMedia{
+    height: 300px;
+}
+
+.sidebar-personal>a, .sidebar-socialMedia>a{
+    border-radius: 50%;
+    transition: 0.3s;
+    color: #CC4E4D;
+    cursor: pointer;
+}
+
+.sidebar-personal>a:hover, .sidebar-socialMedia>a:hover{
+    border-radius: 50%;
+    background: rgba(200, 200, 200, 0.5);
+    padding: 3px;
+}
+
+.sidebar-personal a.active {
+    background-color: rgb(238, 238, 238);
+    -webkit-box-shadow: 7px 5px 15px 1px rgb(0, 0, 0);
+    -moz-box-shadow: 7px 5px 15px 1px rgb(0, 0, 0);
+    box-shadow: 7px 5px 15px 1px rgb(160, 160, 160);
+}

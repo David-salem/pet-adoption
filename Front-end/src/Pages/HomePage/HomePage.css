@@ -1,0 +1,17 @@
+.homePage{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.main-section-left{
+    margin: 0;
+    padding: 0;
+    width: 60%;
+    height: 100vh;
+    background-color: #FFFFFA;
+    z-index: 2;
+    background: linear-gradient(to right, #FFFFFA 90%, transparent);
+}
