@@ -15,9 +15,9 @@ import { PageNotFound } from "./Pages/PageNotFound/PageNotFound.jsx";
 const App = () => {
   return (
     <div>
-      {/* <Logo />
+      <Logo />
       <Sidebar />
-      <Navbar /> */}
+      <Navbar />
       {/* <HomeLoginPage /> */}
       {/* <HomePage /> */}
         <ButtonLogout />
