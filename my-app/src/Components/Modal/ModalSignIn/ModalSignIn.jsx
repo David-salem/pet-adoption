@@ -1,7 +1,7 @@
 import React from 'react';
 import "./ModalSignIn.css";
-import { FcGoogle } from 'react-icons/fc';
 import { CatAnimation } from '../../../Ukits/CatAnimation/CatAnimation';
+import { FormLogin } from '../../../Ukits/Form/FormLogin';
 
 
 export const ModalSignIn = ({setSignInModal, setSignUpModal}) => {
@@ -10,20 +10,12 @@ export const ModalSignIn = ({setSignInModal, setSignUpModal}) => {
             <div className='modal-backdrop' onClick={() => setSignInModal(false)}></div>
                 <div className='box-signIn' align="center">
                     <div className='iconx' onClick={() => setSignInModal(false)}>
-                        <i class="fa-solid fa-x"></i>
+                        <i className="fa-solid fa-x"></i>
                     </div>
                     <h2>Sign In</h2>
-                <form className='form-modal-signin'>
-                    <label htmlFor="email">
-                        Email
-                    </label>
-                        <input type="email" />
-                    <label htmlFor="password">
-                        Password
-                    </label>
-                        <input type="password" />
-                </form>
-                    <span className='login-btn'>Login</span>
+                    <div className='form-modal-signin'>
+                        <FormLogin />
+                    </div>
                 </div>
             <div className='box-modal'>
                 <div className='register-modal' align="center">

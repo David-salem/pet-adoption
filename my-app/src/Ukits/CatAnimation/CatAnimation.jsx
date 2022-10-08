@@ -2,35 +2,34 @@ import "./CatAnimation.scss";
 
 export const CatAnimation = () => {
     return (
-        <div>
-    <div class="dog">
-  <div class="ears"></div>
-  
-  <div class="body">
-    <div class="eyes"></div>
-    <div class="beard">
-      <div class="mouth">
-        <div class="tongue"></div>
+    <div>
+    <div className="dog">
+      <div className="ears"></div>
+        <div className="body">
+          <div className="eyes"></div>
+          <div className="beard">
+            <div className="mouth">
+              <div className="tongue"></div>
+            </div>
+          </div>
+          <div className="belt">
+            <div className="locket"></div>
+            <div className="dot dot1"></div>
+            <div className="dot dot2"></div>
+            <div className="dot dot3"></div>
+            <div className="dot dot4"></div>
+            <div className="tag"></div>
+          </div>
+          <div className="stomach">
+          </div>
+          <div className="legs">
+            <div className="left"></div>
+            <div className="right"></div>
+          </div>
+        </div>
+        <div className="tail">
+        </div>
       </div>
     </div>
-    <div class="belt">
-      <div class="locket"></div>
-      <div class="dot dot1"></div>
-      <div class="dot dot2"></div>
-      <div class="dot dot3"></div>
-      <div class="dot dot4"></div>
-      <div class="tag"></div>
-    </div>
-    <div class="stomach">
-    </div>
-    <div class="legs">
-      <div class="left"></div>
-      <div class="right"></div>
-    </div>
-  </div>
-  <div class="tail">
-  </div>
-</div>
-            </div>
     )
 }

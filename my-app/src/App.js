@@ -15,14 +15,14 @@ import { PageNotFound } from "./Pages/PageNotFound/PageNotFound.jsx";
 const App = () => {
   return (
     <div>
-      <Logo />
+      {/* <Logo />
       <Sidebar />
-      <Navbar />
+      <Navbar /> */}
       {/* <HomeLoginPage /> */}
       {/* <HomePage /> */}
         <ButtonLogout />
       <Routes>
-        <Route path="/" element={   <HomePage />  } />
+        <Route path="/" element={ <HomePage /> } />
         <Route path="/search" element={ <SearchPage/> } />
         <Route path="/profile" element={ <ProfilePage/> } />
         <Route path="/contact" element={ <ContactPage/> } />

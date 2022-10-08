@@ -1,0 +1,27 @@
+.formik-input-container-register>label{
+    display: block;
+    font-family: 'Rockwell';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: capitalize;
+    color: #000000;
+    text-align: left;
+}
+
+.formik-input-container-register>input{
+    width: 300px;
+    height: 35px;
+    margin: 8px;
+    padding: 10px;
+    outline: none;
+    color: #4A4A4A;
+}
+
+.formik-input-container-register>div{
+    font-size: 13px;
+    font-family: 'Rockwell';
+    color: #CC4D4C;
+    border-radius: 6px;
+}

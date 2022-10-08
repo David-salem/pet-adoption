@@ -1,0 +1,71 @@
+.button-register{
+    position: absolute;
+    top: 33rem;
+    left: -2.5rem;
+    padding: 20px 50px 10px 50px;
+}
+
+.button-register>button{
+    font-family: 'Rockwell';
+    font-size: larger;
+    height: 60px;
+    width: 300px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: blanchedalmond;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button-register>button:hover:enabled, .button-login>button:hover:enabled{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.error-form-login{
+    position: absolute;
+    top: 18rem;
+    left: -1rem;
+    width: 350px;
+    border-radius: 5px;
+}
+
+.button-login>button{
+    font-family: 'Rockwell';
+    font-size: larger;
+    position: absolute;
+    top: 23rem;
+    left: 0.5rem;
+    padding: 20px 50px 10px 50px;
+    height: 60px;
+    width: 300px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: blanchedalmond;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.succes-form-login{
+    position: absolute;
+    top: 28rem;
+    left: -1rem;
+    width: 350px;
+    border-radius: 5px;
+}
+
+.circular-register{
+    position: absolute;
+    top: 1.5rem;
+    left: 10rem;
+}
+
+.circular-login{
+    position: absolute;
+    top: 22rem;
+    left: 5rem;
+    padding: 20px 50px 10px 50px;
+}
