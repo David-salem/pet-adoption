@@ -27,6 +27,7 @@ export const SearchBar = () => {
                 <FormControl>
                     <InputLabel id="demo-simple-select-label">Category</InputLabel>
                     <Select
+                    defaultValue = ""
                     labelId="demo-simple-select-label"
                     label="Category"
                     id="demo-simple-select"

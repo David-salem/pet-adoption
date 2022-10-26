@@ -1,8 +1,6 @@
-import React from 'react';
 import "./ModalSignIn.css";
-import { CatAnimation } from '../../../Ukits/CatAnimation/CatAnimation';
-import { FormLogin } from '../../../Ukits/Form/FormLogin';
-
+import { FormLogin } from '../../../UIkits';
+import { CatAnimation } from "../../../Components";
 
 export const ModalSignIn = ({setSignInModal, setSignUpModal}) => {
     return (

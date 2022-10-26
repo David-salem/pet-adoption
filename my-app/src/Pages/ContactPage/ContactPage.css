@@ -77,3 +77,16 @@
     background-color: black;
     color: white;
 }
+
+.loader-contact{
+    position: absolute;
+    top: 29rem;
+    left: 13rem;
+}
+
+.message-contact{
+    margin-left: 31px;
+    margin-top: 2rem;
+    width: 400px;
+    justify-content: center;
+}

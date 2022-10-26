@@ -12,7 +12,7 @@ class ResponseHandler {
             status: this.status,
             payload: {
                 success: this.success,
-                response: this.response,
+                [this.success ? "data" : "message"]: this.response
             }
         }
     }

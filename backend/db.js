@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = 'db';
 const { v4: uuidv4 } = require('uuid');
+const { jwtSign } = require("./lib/JWT");
 
 // CRUD
 class DB {
@@ -24,7 +25,7 @@ class DB {
 
     getById = (id) => {
         const list = this.get();
-        const item = list.find(i => i.id === parseInt(id));
+        const item = list.find(i => i.id === id);
 
         return item;
     };
@@ -69,16 +70,14 @@ class DB {
         return user;
     };
 
-    // updateSingleItem = (id, json) => {
-    //     const list = this.get();
-    //     const item = list.find(i => i.id === parseInt(id));
-
-    //     const change = Object.assign(item, json);
-    //     console.log(change)
-
-    //     // list.push(change);
-    //     // this.save(list);
-    // };
+    getUserToken = (user) => {
+        const { id } = user;
+        delete user.Password;
+    
+        const access_token = jwtSign({ id });
+    
+        return access_token;
+    };
 };
 
 module.exports = DB;

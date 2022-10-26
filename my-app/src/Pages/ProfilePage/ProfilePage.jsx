@@ -1,51 +1,51 @@
-import { Sidebar } from "../../Components/Sidebar/Sidebar";
 import "./ProfilePage.css";
-import { PicUserProfile } from "../../Ukits/PicUserProfile/PicUserProfile";
+import { useContext } from 'react';
+import { Sidebar } from "../../Components";
+import { PicUserProfile } from "../../UIkits";
+import { userContext } from '../../Context/userContext';
+import { Link } from "react-router-dom";
 
 export const ProfilePage = () => {
+    const { infoUser } = useContext(userContext);
+
     return (
         <div className="profile-page">
             <Sidebar />
             <h1>My profile</h1>
-            <p>Manage the settings of your profile</p>
+            <p>Here is your personal information.</p>
             <div className="pic-profilepage">
                 <h2>Your profile picture</h2>
                     <div>
                         <PicUserProfile />
-                        <div>
-                            <p>Upload new picture</p>
-                            <p>Change picture</p>
-                        </div>
                     </div>
             </div>
             <form className='form-profile-signin'>
-                    <label htmlFor="name">
+                    <h4>
                         Name
-                    </label>
-                    <input type="text" id="name"/>
-                    <label htmlFor="last-name">
+                    </h4>
+                    <p>{infoUser.Name} </p> 
+                    <h4>
                         Last Name
-                    </label>
-                    <input type="text" id="last-name"/>
-                    <label htmlFor="email">
+                    </h4>
+                    <p>{infoUser.Surname} </p> 
+                    <h4>
                         Email
-                    </label>
-                    <input type="email" id="email"/>
-                    <label htmlFor="password">
-                        Password
-                    </label>
-                    <input type="password" id="password"/>
-                    <label htmlFor="tel">
+                    </h4>
+                    <p>{infoUser.Email} </p>
+                    <h4>
                         Phone Number
-                    </label>
-                    <input type="tel" id="tel"/>
+                    </h4>
+                    <p>{infoUser.Phone} </p> 
                     <div className="add-bio">
-                        <label htmlFor="bio">
-                             Add bio 
-                        </label>
-                        <textarea id="bio"/>
+                        <h4>
+                            Your bio
+                        </h4>
+                        <p>{infoUser.bio ? infoUser.bio : "You dont have anything yet"}</p> 
                     </div>
-                    <input type="submit" value="Save Changes" className="input-submit-profile"/>
+                    <div className="btn-contact-page">
+                        <Link to="/change-page"> <button className="input-submit-profile"> <i className="fa-solid fa-pen-to-square fa-fw"></i>Edit profile</button></Link>
+                        <button className="input-submit-profile"><i className="fa-solid fa-pen-to-square fa-fw"></i>Change Password</button>
+                    </div>
             </form>
         </div>
     )

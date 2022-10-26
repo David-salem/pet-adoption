@@ -65,8 +65,7 @@
     flex-direction: column;
 }
 
-.form-profile-signin>h4, .add-bio>h4{
-    margin-top: 30px;
+.form-profile-signin>label, .add-bio>label{
     display: flex;
     font-family: 'Rockwell';
     font-style: normal;
@@ -74,35 +73,11 @@
     font-size: 16px;
     line-height: 19px;
     text-transform: capitalize;
-    color: black;
-}
-
-.form-profile-signin>p{
-    padding: 10px;
-    outline: none;
-    color: gray;
-    display: flex;
-    font-size:x-large;
-    font-family: 'Barlow', sans-serif;
-}
-
-.add-bio{
-    position: absolute;
-    width: 300px;
-    top: 12rem;
-    left: 38rem;
-}
-
-.add-bio>p{
-    resize: none;
-    margin-top: 20px;
-    font-family: 'Barlow', sans-serif;
-    font-size: larger;
-    padding: 5px;
+    margin: 0px;
     color: gray;
 }
 
-.input-submit-profile{
+.form-profile-signin>input{
     width: 300px;
     height: 50px;
     margin: 10px;
@@ -112,23 +87,36 @@
     display: flex;
     font-size: larger;
     font-family: 'Barlow', sans-serif;
+}
+
+.add-bio{
+    position: absolute;
+    top: 12rem;
+    left: 38rem;
+}
+
+.add-bio>textarea{
+    width: 380px;
+    height: 150px;
+    resize: none;
+    margin-top: 20px;
+    outline: none;
+    font-family: 'Barlow', sans-serif;
+    font-size: larger;
+    padding: 5px;
+}
+
+.input-submit-profile-change{
+    position: absolute;
+    top: 28rem;
+    left: 19rem;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: .3s;
-    justify-content: center;
 }
 
-.input-submit-profile:hover{
+.input-submit-profile-change:hover{
     background-color: black;
     color: white;
-}
-
-.btn-contact-page{
-    margin: 30px 30px;
-    width: 900px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.btn-contact-page>a{
-    text-decoration: none;
 }

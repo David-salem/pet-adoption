@@ -1,1 +1,22 @@
-[{"Name":"David Josh salem","Surname":"dasdsd","Email":"davidsalem38@gmail.com","Password":"aaaaa","Phone":"0584365924","id":"20ac97d8-566d-4039-90a8-52a22e1908a7"},{"Name":"David Josh salem","Surname":"dasdsd","Email":"davidsalem37@gmail.com","Password":"aaaaa","Phone":"0584365924","id":"f6e875d0-c9f4-4fed-9d7d-1d07e4fba38b"},{"Name":"David Josh salem","Surname":"dasdsd","Email":"davidsalem379@gmail.com","Password":"aaaaa","Phone":"0584365924","id":"823d7271-f49e-4536-b4b3-a3af91196b93"}]
+[{
+    "Name": "David",
+    "Surname": "salem",
+    "Email": "davidsalem0038@gmail.com",
+    "Password": "$2b$10$wcswqchpCkxzU3pwECIxROGKJXxt.brdGbXVRMriLx6sKvfXcByrW",
+    "Permissions": ["marketing",
+        "finance"
+    ],
+    "Phone": "0584365924",
+    "id": "dee2eaa6-b37c-44f7-981b-5b00fabe756a"
+}, {
+    "Name": "David",
+    "Surname": "Salem",
+    "Email": "davidsalem38@gmail.com",
+    "Permissions": [
+        "marketing",
+        "admin"
+    ],
+    "Password": "$2b$10$k2sup01aENfL5X1SWda3u.jkps3ph1RQlhiRM7kBdBn7UiuxvZuFq",
+    "Phone": "0584365924",
+    "id": "9cbd55ff-90b1-4829-b99a-af9232badd11"
+}]

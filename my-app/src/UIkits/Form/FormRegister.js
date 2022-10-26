@@ -17,7 +17,7 @@ export const FormRegister = () => {
         Surname: "",
         Email: "",
         Password: "",
-        "Confirm Password": "",
+        password: "",
         Phone: ""
       };
 
@@ -35,12 +35,12 @@ export const FormRegister = () => {
                 Phone: values.Phone
             }
         ).then(resp => {
-            console.log('values', values);
             setSuccessMessage("User created successfully, go to login")
             resetForm({values: ""});
             setLoader(false);
         }).catch(err => {
-            setErrorMessage(err.response.data.response);
+            console.log(err)
+            setErrorMessage(err.response.data.message);
             setLoader(false);
         })
     };
@@ -67,7 +67,7 @@ export const FormRegister = () => {
                                 <Field name="Surname" component={InputFormRegister} />
                                 <Field name="Email" component={InputFormRegister} />
                                 <Field name="Password"  component={InputFormRegister} />
-                                <Field name="Confirm Password" component={InputFormRegister} />
+                                <Field name="password" component={InputFormRegister} />
                                 <Field name="Phone" component={InputFormRegister} />
 
                                 <div className="succes-form-login">

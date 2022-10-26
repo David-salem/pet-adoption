@@ -1,7 +1,5 @@
 import "./AdvancedOption.css";
 
-import React from 'react';
-
 export const AdvanceOption = () => {
     return (
         <div className="advance-box">

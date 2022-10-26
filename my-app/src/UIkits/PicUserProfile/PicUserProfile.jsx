@@ -1,7 +1,11 @@
-import "./PicUser.css";
+import "./PicUserProfile.css";
+import { useContext } from 'react';
+import { userContext } from '../../Context/userContext';
 
-export const PicUser = () => {
-	let name = "Jhon Smith";
+export const PicUserProfile = () => {
+    const { infoUser } = useContext(userContext);
+
+	let name = `${infoUser.Name} ${infoUser.Surname}`;
 	let imgSrc = "";
 
     const getInitials = () => {
@@ -43,9 +47,9 @@ export const PicUser = () => {
     };
 
 	return (
-		<div className="div-picuser">
+		<div className="div-picuser-profile">
 			<img
-                className="pic-user"
+                className="pic-user-profile"
 				id='preview'
 				src={
 					imgSrc.length <= 0

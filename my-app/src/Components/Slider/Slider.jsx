@@ -1,20 +1,15 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { sliderData } from "./sliderData";
 import "./Slider.css";
 
 export const Slider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slideLength = sliderData.length;
-    const autoScroll = true;
     let slideInterval;
 
     const nextSlide = () => {
         setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1)
     }
-
-    // const prevSlide = () => {
-    //     setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1)
-    // }
 
     const autoSlide = () => {
         slideInterval = setInterval(nextSlide, 10200);
@@ -25,8 +20,8 @@ export const Slider = () => {
     }, [])
 
     useEffect(() =>{
-            autoSlide()
-        return () => clearInterval(slideInterval)
+        autoSlide()
+        return () => clearInterval(slideInterval)
     }, [currentSlide]);
 
     return (

@@ -1,20 +1,28 @@
 const express = require('express');
+const bcrypt = require("bcrypt");
 const router = express.Router();
 const { ErrUserNotFound, ErrConflict, ErrConfictPassword } = require("../lib/ResponseHandler");
-
 
 const DB = require('../db');
 const users = new DB('users');
 
 // Routes
 router.get('/', (req, res) => {
-    console.log('req.query', req.query);
-
     res.send(users.get());
 });
 
+router.get('/me', (req, res) => {
+    res.ok(req.user)
+});
+
+router.get("/permissions", (req, res) => {
+    const { user } = req;
+
+    res.ok(user.Permissions);
+})
+
 // POST routes
-router.post('/register', (req, res, next) => {
+router.post('/register', async(req, res, next) => {
     const { Email } = req.body;
 
     const user = users.getUserByEmail(Email);
@@ -23,11 +31,14 @@ router.post('/register', (req, res, next) => {
         return next(ErrConflict());
     }
 
+    const salt = await bcrypt.genSalt(10);
+    req.body.Password = await bcrypt.hash(req.body.Password, salt);
+
     const newUser = users.add(req.body);
     res.create(newUser);
 })
 
-router.post('/login', (req, res, next) => {
+router.post('/login', async(req, res, next) => {
     const { Email, Password } = req.body;
 
     const user = users.getUserByEmail(Email);
@@ -36,21 +47,21 @@ router.post('/login', (req, res, next) => {
         return next(ErrUserNotFound());
     }
 
-    if (user.Password !== Password) {
+    const validPassword = await bcrypt.compare(Password, user.Password);
+
+    if (!validPassword) {
         return next(ErrConfictPassword());
     }
 
-    console.log("user " + user)
-    res.send("everything is fine");
-});
+    const accessToken = users.getUserToken(user)
 
+    res.ok({ accessToken, user })
+});
 
 //By ID
 router
     .route("/:id")
     .get((req, res) => {
-        console.log('params', req.params);
-
         res.send(users.getById(req.params.id));
     })
     .delete((req, res) => {
@@ -63,12 +74,5 @@ router
         
         res.send(`res: ${resp}`);
     })
-    // .patch((req, res) => {
-    //     // const { id } = req.params.id;
-    //     // const user = users.updateSingleItem(req.params.id, req.body)
-    //     console.log('params', req.params);
-
-    //     res.send(users.updateSingleItem(req.params.id, req.params.id));
-    // })
 
 module.exports = router;

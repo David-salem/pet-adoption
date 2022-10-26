@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
 import { userLoginSchema } from "../../yupValidation/userValidation";
 import { Formik, Form, Field } from "formik";
 import { InputFormLogin } from "../Input/InputFormLogin/InputFormLogin";
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
+import { userContext } from '../../Context/userContext';
 
 
 export const FormLogin = () => {
     const [loader, setLoader] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+    const { login } = useContext(userContext);
 
     const initialValues = {
         Email: "",
@@ -28,8 +30,9 @@ export const FormLogin = () => {
         ).then(resp => {
             resetForm({values: ""});
             setLoader(false);
+            login(resp.data.data.accessToken);
         }).catch(err => {
-            setErrorMessage(err.response.data.response);
+            setErrorMessage(err.response.data.message);
             setLoader(false);
         })
     };

@@ -1,6 +1,6 @@
 import "./ModalSignUp.css";
-import { DogAnimation  } from '../../../Ukits/DogAnimation/DogAnimation';
-import { FormRegister } from '../../../Ukits/Form/FormRegister';
+import { FormRegister } from '../../../UIkits';
+import { DogAnimation } from "../../../Components";
 
 export const ModalSignUp = ({setSignUpModal, setSignInModal}) => {
     return (

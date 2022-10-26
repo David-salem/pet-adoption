@@ -1,7 +1,6 @@
 import "./HomeLoginPage.css"
-import { Logo } from "../../Ukits/Logo/Logo";
-import { Sidebar } from "../../Components/Sidebar/Sidebar";
-import { HeaderHomePage } from "../../Components/HeaderHomePage/HeaderHomePage";
+import { Logo } from "../../UIkits";
+import { Sidebar, HeaderHomePage } from "../../Components";
 
 export const HomeLoginPage = () => {
     return (

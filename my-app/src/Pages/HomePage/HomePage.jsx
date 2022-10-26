@@ -1,12 +1,7 @@
 import { useState } from "react";
 import "./HomePage.css";
-import { Slider } from "../../Components/Slider/Slider";
-import { ModalSignIn } from "../../Components/Modal/ModalSignIn/ModalSignIn";
-import { ModalSignUp } from "../../Components/Modal/ModalSignUp/ModalSignUp";
-import { ButtonSignIn } from "../../Ukits/Button/ButtonSignIn/ButtonSignIn";
-import { ButtonSignUp } from "../../Ukits/Button/ButtonSignUp/ButtonSignUp";
-import { Header } from "../../Components/Header/Header";
-import { Logo } from "../../Ukits/Logo/Logo";
+import { Slider, Header, ModalSignIn, ModalSignUp } from "../../Components";
+import { ButtonSignIn, ButtonSignUp, Logo } from "../../UIkits";
 
 export const HomePage = () => {
     const [signInModal, setSignInModal] = useState(false);

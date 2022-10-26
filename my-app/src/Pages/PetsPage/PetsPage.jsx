@@ -1,5 +1,5 @@
 import "./PetsPage.css";
-import { HeaderMyPets } from "../../Components/HeaderMyPets/HeaderMyPets";
+import { HeaderMyPets } from "../../Components";
 
 export const PetsPage = () => {
     return (

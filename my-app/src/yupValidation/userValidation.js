@@ -12,9 +12,9 @@ export const userRegistrationSchema = yup.object().shape({
     .email("Invalid email format"),
     Password: yup.string()
     .required("This field is required")
-    .matches(/^[aA-zZ\s]+$/, "Only alphabets and numbers are allowed")
+    .matches(/^[0-9A-Za-z]+$/, "Only alphabets and numbers are allowed")
     .min(5, "Password must be at least 5 characters"),
-    "Confirm Password": yup.string()
+    password: yup.string()
     .oneOf([yup.ref("Password"), null], "Passwords don't match")
     .required("This field is required"),
     Phone: yup.number("Only numbers are allowed")
@@ -31,6 +31,6 @@ export const userLoginSchema = yup.object().shape({
     .email("Invalid email format"),
     Password: yup.string()
     .required()
-    .matches(/^[aA-zZ\s]+$/, "Only alphabets and numbers are allowed for this field")
+    .matches(/^[0-9A-Za-z]+$/, "Only alphabets and numbers are allowed for this field")
     .min(5, "Password must be at least 5 characters"),
 });

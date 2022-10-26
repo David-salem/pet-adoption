@@ -1,6 +1,5 @@
-import { Sidebar } from "../../Components/Sidebar/Sidebar";
-import { SearchBar } from "../../Components/SearchBar/SearchBar";
 import "./SearchPage.css";
+import { Sidebar, SearchBar } from "../../Components";
 
 export const SearchPage = () => {
     return(
