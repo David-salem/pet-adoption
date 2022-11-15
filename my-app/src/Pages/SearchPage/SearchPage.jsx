@@ -1,5 +1,5 @@
 import "./SearchPage.css";
-import { Sidebar, SearchBar } from "../../Components";
+import { SearchBar } from "../../Components";
 
 export const SearchPage = () => {
     return(
@@ -9,7 +9,6 @@ export const SearchPage = () => {
                 <p>Start looking for your life partner</p>
             </div>
             <SearchBar />
-            <Sidebar />
         </div>
     )
 }

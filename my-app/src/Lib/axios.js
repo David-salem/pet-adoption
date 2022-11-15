@@ -15,7 +15,31 @@ export const fetchUrl = (url) => {
         axios.get(`${baseUrl}${url}`, config).then(resp => {
             res(resp.data.data);
         }).catch((resp) => {
-            rej(resp.response.data.message);
+            rej(resp.response.data);
         })
     })
-}
+};
+
+export const fetchUrlPut = async(url, data) => {
+    return new Promise((res, rej) => {
+        axios.put(`${baseUrl}${url}`, data, {headers: {
+            authorization: storeGetToken()
+        },withCredentials: true},).then(resp => {
+            res(resp);
+        }).catch((resp) => {
+            rej(resp.response.data)
+        })
+    })
+};
+
+export const fetchUrlPost = async(url, data) => {
+    return new Promise((res, rej) => {
+        axios.post(`${baseUrl}${url}`, data, {headers: {
+            authorization: storeGetToken()
+        },withCredentials: true},).then(resp => {
+            res(resp);
+        }).catch((resp) => {
+            rej(resp.response.data)
+        })
+    })
+};

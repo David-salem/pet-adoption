@@ -9,3 +9,5 @@ export * from "./Input/InputFormRegister/InputFormRegister";
 export * from './Logo/Logo';
 export * from "./PicUser/PicUser";
 export * from "./PicUserProfile/PicUserProfile";
+export * from "./Input/InputAddPet/InputAddPet";
+export * from "./TextArea/TextArea";

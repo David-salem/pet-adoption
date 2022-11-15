@@ -1,16 +1,16 @@
 import "./ProfilePage.css";
-import { useContext } from 'react';
-import { Sidebar } from "../../Components";
+import { useContext, useState } from 'react';
+import { ModalChangePassword } from "../../Components";
 import { PicUserProfile } from "../../UIkits";
 import { userContext } from '../../Context/userContext';
 import { Link } from "react-router-dom";
 
 export const ProfilePage = () => {
     const { infoUser } = useContext(userContext);
+    const [modal, setModal] = useState(false);
 
     return (
         <div className="profile-page">
-            <Sidebar />
             <h1>My profile</h1>
             <p>Here is your personal information.</p>
             <div className="pic-profilepage">
@@ -40,13 +40,16 @@ export const ProfilePage = () => {
                         <h4>
                             Your bio
                         </h4>
-                        <p>{infoUser.bio ? infoUser.bio : "You dont have anything yet"}</p> 
-                    </div>
-                    <div className="btn-contact-page">
-                        <Link to="/change-page"> <button className="input-submit-profile"> <i className="fa-solid fa-pen-to-square fa-fw"></i>Edit profile</button></Link>
-                        <button className="input-submit-profile"><i className="fa-solid fa-pen-to-square fa-fw"></i>Change Password</button>
+                        <p>{infoUser.Bio ? infoUser.Bio : "You dont have anything yet"}</p> 
                     </div>
             </form>
+            <div className="btn-contact-page">
+                <Link to="/change-page"> <button className="input-submit-profile"> <i className="fa-solid fa-pen-to-square fa-fw"></i>Edit profile</button></Link>
+                <button className="input-submit-profile" onClick={() => setModal(true)}><i className="fa-solid fa-pen-to-square fa-fw"></i>Change Password</button>
+            </div>
+            <div>
+                {modal && <ModalChangePassword setModal={setModal}/>}
+            </div>
         </div>
     )
 }

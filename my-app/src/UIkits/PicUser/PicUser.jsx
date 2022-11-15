@@ -1,12 +1,17 @@
 import "./PicUser.css";
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { userContext } from '../../Context/userContext';
 
 export const PicUser = () => {
     const { infoUser } = useContext(userContext);
+    const [pic, setPic] = useState("");
+
+    useEffect(() => {
+        if(infoUser.avatar) setPic(infoUser.avatar)
+        else setPic("");
+    }, [])
 
 	let name = `${infoUser.Name} ${infoUser.Surname}`;	
-    let imgSrc = "";
 
     const getInitials = () => {
         let initials;
@@ -52,9 +57,7 @@ export const PicUser = () => {
                 className="pic-user"
 				id='preview'
 				src={
-					imgSrc.length <= 0
-						? createImageFromInitials(500, name, "#4BAB67")
-						: imgSrc
+					pic ? pic : createImageFromInitials(500, name, "#4BAB67")
 				}
 				alt='profile-pic'
 			/>

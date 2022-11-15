@@ -1,0 +1,198 @@
+.my-pets-page{
+    background-color: #FFFFFA;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.my-pet-pic{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 3rem 0rem 0 5rem;
+}
+
+.title-mypets>h1{
+    font-family: 'Barlow', sans-serif;
+    position: absolute;
+    font-size: xx-large;
+    top: 6.5rem;
+    left: 15rem;
+}
+
+
+.title-mypets>p{
+    font-family: 'Barlow', sans-serif;
+    position: absolute;
+    top: 9.5rem;
+    left: 15rem;
+    color: gray;
+}
+
+.status-box{
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+    position: absolute;
+    display: flex;
+    top: 23rem;
+    color: gray;
+    text-align: center;
+    align-items: center;
+    border-bottom: 2px solid gray;
+}
+
+.status-box>p{
+    margin-left: 5px;
+}
+
+.imp-info-pet{
+    border: 3px solid black;
+    position: absolute;
+    left: 15rem;
+    top: 13.5rem;
+    border-radius: 10px;
+    width: 350px;
+    height: 520px;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 30px;
+}
+
+.imp-info-pet>p{
+    font-family: 'Barlow', sans-serif;
+    font-size: 30px;
+    position: absolute;
+    top: 19rem;
+    left: 33%;
+}
+
+.status-info-pet{
+    border: 2px solid black;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 30px;
+    position: absolute;
+    left: 40rem;
+    top: 13.5rem;
+    border-radius: 10px;
+    width: 575px;
+    height:250px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.status-info-pet>h2{
+    border-bottom: 2px solid gray;
+    padding: 10px;
+}
+
+.btn-box-pet{
+    position: absolute;
+    top: 26.7rem;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-box-pet>button{
+    background-color: white;
+    justify-self: center;
+    margin-top: 15px;
+    width: 170px;
+    height: 50px;
+    border: none;
+    font-family: 'Barlow', sans-serif;
+    color: rgb(84, 129, 233);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
+}
+
+.btn-box-pet>button:hover{
+    background-color: rgb(84, 129, 233);
+    color: white;
+}
+
+.box-info-pet{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.box-info-pet>div{
+    width: 250px;
+}
+.box-info-pet>div>p{
+    margin-top: 10px;
+    background-color: rgba(128, 128, 128, 0.205);
+    padding: 5px;
+    border-radius: 6px;
+    width: 250px;
+}
+
+.box-btn-info-pet{
+    position: absolute;
+    top: 42rem;
+    left: 45.5rem;
+    display: flex;
+}
+
+.box-btn-info-pet>button{
+    width: 150px;
+    height: 50px;
+    border: 3px solid rgb(10, 134, 188);
+    font-family: 'Barlow', sans-serif;
+    border-radius: 6px;
+    color: rgb(10, 134, 188);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
+}
+
+.box-btn-info-pet>button:hover{
+    background-color: rgb(10, 134, 188);
+    color: white;
+}
+
+.return-pet-btn{
+    position: absolute;
+    top: 42rem;
+    left: 65rem;
+}
+
+.return-pet-btn>button{
+    width: 150px;
+    height: 50px;
+    border: 3px solid rgb(203, 48, 5);
+    font-family: 'Barlow', sans-serif;
+    border-radius: 6px;
+    color: rgb(203, 48, 5);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
+}
+
+.return-pet-btn>button:hover{
+    background-color: rgb(203, 48, 5);
+    color: white;
+}
+
+.edit-btn-pet{
+    position: absolute;
+    top: 35rem;
+    left: 55rem;
+}
+
+.edit-btn-pet>button{
+    width: 150px;
+    height: 50px;
+    border: 3px solid rgba(22, 135, 2, 0.66);
+    font-family: 'Barlow', sans-serif;
+    border-radius: 6px;
+    color: rgba(22, 135, 2, 0.66);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
+}
+
+.edit-btn-pet>button:hover{
+    background-color: rgba(22, 135, 2, 0.66);
+    color: white;
+}

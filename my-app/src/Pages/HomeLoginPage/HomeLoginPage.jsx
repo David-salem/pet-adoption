@@ -1,6 +1,5 @@
 import "./HomeLoginPage.css"
-import { Logo } from "../../UIkits";
-import { Sidebar, HeaderHomePage } from "../../Components";
+import { HeaderHomePage } from "../../Components";
 
 export const HomeLoginPage = () => {
     return (
@@ -8,8 +7,6 @@ export const HomeLoginPage = () => {
             <div className="pic-homepage">
             </div>
             <HeaderHomePage />
-            <Logo />
-            <Sidebar />
         </div>
     );
 }

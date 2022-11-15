@@ -1,14 +1,18 @@
 const express = require('express');
-const bcrypt = require("bcrypt");
 const router = express.Router();
-const { ErrUserNotFound, ErrConflict, ErrConfictPassword } = require("../lib/ResponseHandler");
-
-const DB = require('../db');
-const users = new DB('users');
+const { getUser, getUsers, updateUser } = require("../repo/users.repo");
+const { uploadToCloudinary } = require("../lib/cloudinary");
+const multer = require('multer');
+const upload = multer({ dest: "uploads/"});
+const fs = require('fs');
+const { postRegister, postLogin, changePassword, updateUserInfo } = require("../controllers/users.controller");
+const { validateDto } = require("../dto/validate");
+const { userRegistrationSchema, userLoginSchema, userChangeData, changePasswordSchema } = require("../dto/users.schema")
 
 // Routes
-router.get('/', (req, res) => {
-    res.send(users.get());
+router.get('/', async(req, res) => {
+    const resp = await getUsers();
+    res.ok(resp);
 });
 
 router.get('/me', (req, res) => {
@@ -17,62 +21,30 @@ router.get('/me', (req, res) => {
 
 router.get("/permissions", (req, res) => {
     const { user } = req;
-
     res.ok(user.Permissions);
 })
 
-// POST routes
-router.post('/register', async(req, res, next) => {
-    const { Email } = req.body;
+// routes
+router.post('/register', validateDto(userRegistrationSchema), postRegister);
 
-    const user = users.getUserByEmail(Email);
+router.post('/login', validateDto(userLoginSchema), postLogin);
 
-    if (user) {
-        return next(ErrConflict());
-    }
+router.put("/changePassword/:id", validateDto(changePasswordSchema),  changePassword);
 
-    const salt = await bcrypt.genSalt(10);
-    req.body.Password = await bcrypt.hash(req.body.Password, salt);
+router.put('/updateUser/:id', validateDto(userChangeData), updateUserInfo);
 
-    const newUser = users.add(req.body);
-    res.create(newUser);
-})
+router.put("/ProfilePic/:id", upload.single("avatar"), async(req, res) => {
+    const { id } = req.params;
+    const result = await uploadToCloudinary(req.file.path);
 
-router.post('/login', async(req, res, next) => {
-    const { Email, Password } = req.body;
+    fs.unlinkSync(req.file.path);
+    const fileUrl = result.secure_url;
 
-    const user = users.getUserByEmail(Email);
+    let currentUser = await getUser(id);
+    currentUser.avatar = fileUrl;
+    const resp = await updateUser(id,currentUser);
 
-    if (!user) {
-        return next(ErrUserNotFound());
-    }
-
-    const validPassword = await bcrypt.compare(Password, user.Password);
-
-    if (!validPassword) {
-        return next(ErrConfictPassword());
-    }
-
-    const accessToken = users.getUserToken(user)
-
-    res.ok({ accessToken, user })
+    res.ok(resp);
 });
 
-//By ID
-router
-    .route("/:id")
-    .get((req, res) => {
-        res.send(users.getById(req.params.id));
-    })
-    .delete((req, res) => {
-        const resp = users.deleteById(req.params.id);
-
-        res.send(`Deleted: ${resp}`);
-    })
-    .put((req, res) => {
-        const resp = users.updateItem(req.params.id, req.body);
-        
-        res.send(`res: ${resp}`);
-    })
-
-module.exports = router;
+module.exports = router; 

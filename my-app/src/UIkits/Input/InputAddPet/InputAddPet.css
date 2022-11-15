@@ -1,0 +1,28 @@
+.formik-input-container-add-pet>label{
+    display: block;
+    font-family: 'Rockwell';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: capitalize;
+    color: #000000;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.formik-input-container-add-pet>input{
+    width: 200px;
+    height: 30px;
+    margin: 8px;
+    padding: 10px;
+    outline: none;
+    color: #4A4A4A;
+}
+
+.formik-input-container-add-pet>div{
+    font-size: 13px;
+    font-family: 'Rockwell';
+    color: #CC4D4C;
+    border-radius: 6px;
+}

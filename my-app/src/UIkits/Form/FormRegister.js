@@ -3,7 +3,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { userRegistrationSchema } from "../../yupValidation/userValidation";
 import { Formik, Form, Field } from "formik";
-import { InputFormRegister } from "../Input/InputFormRegister/InputFormRegister";
+import { InputFormRegister } from "../";
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
 
@@ -17,7 +17,7 @@ export const FormRegister = () => {
         Surname: "",
         Email: "",
         Password: "",
-        password: "",
+        ConfirmPassword: "",
         Phone: ""
       };
 
@@ -58,6 +58,10 @@ export const FormRegister = () => {
                     const {
                     dirty,
                     isValid,
+                    touched,
+                    errors,
+                    handleChange,
+                    handleBlur,
                     } = formik;
 
                 return (
@@ -67,14 +71,20 @@ export const FormRegister = () => {
                                 <Field name="Surname" component={InputFormRegister} />
                                 <Field name="Email" component={InputFormRegister} />
                                 <Field name="Password"  component={InputFormRegister} />
-                                <Field name="password" component={InputFormRegister} />
+                                <div className="formik-input-container-register">
+                                    <label htmlFor="ConfirmPassword">Confirm Password</label>
+                                    <input 
+                                    type="password" 
+                                    name="ConfirmPassword"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    />
+                                    <div> {touched.ConfirmPassword && errors.ConfirmPassword} </div>
+                                </div>
                                 <Field name="Phone" component={InputFormRegister} />
 
                                 <div className="succes-form-login">
                                     {succesMessage && <Alert severity="success">{succesMessage}</Alert>}
-                                </div>
-
-                                <div className="succes-form-login">
                                     {errorMessage && <Alert severity="error">{errorMessage}</Alert>}
                                 </div>
 
@@ -95,39 +105,3 @@ export const FormRegister = () => {
         </div>
     );
 };
-
-
-{/* <Field name="lastName" placeholder="Doe" component={MyInput} /> 
-
-withFormik({
- mapPropsToValues: () => ({
-  current_password: "",
-  new_password: "",
-  re_new_password: ""
- }),
- validationSchema: Yup.object().shape({
-  current_password: Yup.string()
-   .min(6, "This field must be at least 6 characters")
-   .required("This field is required"),
-  new_password: Yup.string()
-   .min(8, "The password must be at least 8 characters")
-   .required("New Password is required"),
-  re_new_password: Yup.string()
-   .oneOf([Yup.ref("new_password"), null], "Passwords don't match.")
-   .required("Password confirm is required")
- }),
- handleSubmit: (
-  { current_password, new_password, re_new_password },
-  { props, setSubmitting, setErrors, resetForm }
- ) => {
-  props
-   .changePassword({ current_password, new_password, re_new_password })
-   .then(() => window.scrollTo(0, 0))
-   .then(() => resetForm());
-  setSubmitting(false);
- },
- displayName: "ChangePasswordForm" //hlps with react devtools
-})(InnerPwForm)
-
-
-*/}

@@ -1,0 +1,128 @@
+.body-modal-add {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 600px;
+    z-index: 5;
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+}
+
+.body-modal-add>h1 {
+    font-family: 'Barlow', sans-serif;
+    position: absolute;
+    font-size: xx-large;
+    top: 1.5rem;
+    left: 0;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.body-modal-add>div>img {
+    position: absolute;
+    top: 6rem;
+    left: 11.5rem;
+}
+
+.body-modal-add>div>input {
+    position: absolute;
+    top: 16.3rem;
+    left: 6.5rem;
+}
+
+.body-modal-add>div>img {
+    display: block;
+    border: 1px solid green;
+}
+
+.box-information-add-pet {
+    position: absolute;
+    top: 19rem;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.cancel-btn-add {
+    position: absolute;
+    top: 47rem;
+    width: 120px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 70px;
+    border: 3px solid rgb(236, 100, 100);
+    font-family: 'Barlow', sans-serif;
+    border-radius: 6px;
+    color: rgb(236, 100, 100);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
+}
+
+.cancel-btn-add:hover {
+    background-color: #ec1313;
+    color: white;
+}
+
+.box-add-btn>button {
+    position: absolute;
+    top: 47rem;
+    right: 19rem;
+    width: 160px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 70px;
+    border: 3px solid rgb(35, 150, 81);
+    font-family: 'Barlow', sans-serif;
+    border-radius: 6px;
+    color: rgb(35, 150, 81);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
+}
+
+.box-add-btn>button:hover {
+    background-color: rgb(14, 107, 52);
+    color: white;
+}
+
+.succes-form-add-pet {
+    position: absolute;
+    top: 44rem;
+    width: 100%;
+}
+
+.circular-add-pet {
+    position: absolute;
+    top: 47.5rem;
+    right: 23.5rem;
+}
+
+
+[type="file"] {
+    color: rgb(59, 114, 186);
+}
+
+[type="file"]::-webkit-file-upload-button {
+    color: rgb(59, 114, 186);
+    border: 2px solid rgb(59, 114, 186);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    outline: none;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    transition: all .3s ease;
+}
+
+[type="file"]::-webkit-file-upload-button:hover {
+    background: rgb(59, 114, 186);
+    border: 2px solid white;
+    color: white;
+}

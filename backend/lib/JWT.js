@@ -9,7 +9,6 @@ module.exports.jwtSign = (payload, expiresIn = '1h') => {
 
 module.exports.jwtVerify = (token) => {
     const payload = jwt.verify(token, process.env.SECRET_KEY);
-    console.log(payload)
     
     return payload;
 }

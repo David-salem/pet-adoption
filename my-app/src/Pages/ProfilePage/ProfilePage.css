@@ -8,16 +8,16 @@
 
 .profile-page>h1{
     position: absolute;
-    top: 7rem;
-    left: 10rem;
+    top: 6.5rem;
+    left: 13.5rem;
     font-family: 'Barlow', sans-serif;
 }
 
 .profile-page>p{
-    position: absolute;
-    top: 10rem;
-    left: 10rem;
     font-family: 'Barlow', sans-serif;
+    position: absolute;
+    top: 9.5rem;
+    left: 13.5rem;
     color: gray;
 }
 
@@ -117,12 +117,20 @@
     justify-content: center;
 }
 
+.input-submit-profile:disabled{
+    cursor: not-allowed;
+    background-color: gray;
+}
+
 .input-submit-profile:hover{
     background-color: black;
     color: white;
 }
 
 .btn-contact-page{
+    position: absolute;
+    top: 42rem;
+    left: 13rem;
     margin: 30px 30px;
     width: 900px;
     display: flex;

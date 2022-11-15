@@ -1,4 +1,4 @@
-.formik-input-container-login>label{
+.formik-input-container-login>label, .bio-form>label{
     display: block;
     font-family: 'Rockwell';
     font-style: normal;

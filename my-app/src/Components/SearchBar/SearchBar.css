@@ -9,34 +9,36 @@
 .form-search{
     position: absolute;
     display: flex;
-    top: 12rem;
-    left: 25rem;
-    width: 700px;
+    top: 10rem;
+    left: 40rem;
+    width: 350px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border: none;
     border-radius: 10px;
 }
 
 .search-input{
-    width: 600px;
+    width: 160px;
     background-color: #DCF1E4;
-    border-style:none;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    height: 50px;
+    border-radius: 6px;
+    height: 30px;
     padding: 10px;
-    outline: none;
-    
 }
 
 .btn-switch{
     position: absolute;
-    top: 9rem;
-    left: 56rem;
+    top: 10rem;
+    left: 68rem;
+    background-color:#4BAB67;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
 }
 
 .btn-search{
     display: flex;
+    font-family: 'Barlow', sans-serif;
+    font-size: medium;
     justify-content: center;
     align-items: center;
     width: 200px;
@@ -63,4 +65,41 @@
 
 .form-search>label{
     color: red;
+}
+
+.pet-card{
+    width: 925px;
+    position: absolute;
+    top: 28rem;
+    left: 27rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.advance-box{
+    width: 500px;
+    height: 200px;
+    opacity: 0.7;
+    background-color: rgb(211, 243, 232);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    position: absolute;
+    top: 14rem;
+    left: 34.5rem;
+    padding: 10px;
+}
+
+.advance-box>form{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.height-weight>h3{
+    margin-top: 30px;
+}
+
+.name-adoption>h3{
+    margin-top: 30px;
 }

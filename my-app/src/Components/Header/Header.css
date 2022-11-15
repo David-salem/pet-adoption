@@ -39,9 +39,10 @@
     margin: 10px 15px 0 0;
     font-family: 'Open Sans', sans-serif;
 }
-.card-home>p>a{
+.card-home>a>p{
     margin: 10px 15px 0 0;
     font-family: 'Open Sans', sans-serif;
+    font-size: large;
     text-decoration: underline;
     color: #7A302F;
 }
@@ -62,6 +63,11 @@
     color: white;
     cursor: pointer;
     transition: 0.3s;
+}
+
+.explore-home>a{
+    text-decoration: none;
+    color: white;
 }
 
 .explore-home:hover{

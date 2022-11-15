@@ -1,0 +1,27 @@
+.txt-area-body>label{
+    display: block;
+    font-family: 'Rockwell';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: capitalize;
+    color: #000000;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.txt-area-body>textarea{
+    resize: none;
+    font-family: 'Rockwell';
+    padding: 5px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.txt-area-body>div{
+    font-size: 13px;
+    font-family: 'Rockwell';
+    color: #CC4D4C;
+    border-radius: 6px;
+}

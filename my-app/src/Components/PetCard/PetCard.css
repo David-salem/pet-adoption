@@ -1,0 +1,8 @@
+.link-pet>a{
+    text-decoration: none;
+}
+
+.adoptionStatus-card{
+    margin-left: 14px;
+    color: rgb(0, 0, 0);
+}

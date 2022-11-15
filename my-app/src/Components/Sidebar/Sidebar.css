@@ -4,8 +4,10 @@
     width: 80px;
     height: 100%;
     position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    bottom: 0;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -34,13 +36,13 @@
 }
 
 .sidebar-personal{
-    height: 300px;
+    height: 500px;
     position: absolute;
     top: 4.5rem;
 }
 
 .sidebar-socialMedia{
-    height: 300px;
+    height: 200px;
 }
 
 .sidebar-personal>a, .sidebar-socialMedia>a{

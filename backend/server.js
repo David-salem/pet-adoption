@@ -3,8 +3,8 @@ const cors = require('cors');
 const app = express();
 const { jwtVerify } = require('./lib/JWT');
 const PORT = 4000;
-const DB = require('./db');
 const { ValidRes, ErrNotAuthed, CreatedRes, ErrUserNotFound } = require('./lib/ResponseHandler');
+const { getUser } = require("./repo/users.repo");
 
 // Middlewares
 app.use(express.json());
@@ -37,10 +37,10 @@ app.use((req, res, next) => {
 });
 
 //auth middleware
-app.use((req, res, next) => {
-    const authorized = ['/users/login', '/users/register'];
-
-    if (authorized.includes(req.url)) {
+app.use(async(req, res, next) => {
+    const authorized = ['/users/login', '/users/register', '/pets', '/pets/:id'];
+    
+    if (authorized.includes(req.url)) { 
         return next();
     }
 
@@ -49,9 +49,7 @@ app.use((req, res, next) => {
     try {
         const decoded = jwtVerify(authorization);
 
-        const users = new DB('users');
-
-        const user = users.getById(decoded.id);
+        const user = await getUser(decoded._id);
 
         if (!user) {
             return next(ErrUserNotFound());
@@ -68,7 +66,7 @@ app.use((req, res, next) => {
 })
 
 // Router layer
-// app.use('/pets', require('./routes/pets.route'));
+app.use('/pets', require('./routes/pets.route'));
 app.use('/users', require('./routes/users.route'));
 
 //error layer

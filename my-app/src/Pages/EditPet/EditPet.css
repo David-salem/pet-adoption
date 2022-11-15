@@ -1,0 +1,288 @@
+.my-pets-edit-page{
+    background-color: #FFFFFA;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.title-mypets>h1{
+    font-family: 'Barlow', sans-serif;
+    position: absolute;
+    font-size: xx-large;
+    top: 6.5rem;
+    left: 15rem;
+}
+
+
+.title-mypets>p{
+    font-family: 'Barlow', sans-serif;
+    position: absolute;
+    top: 9.5rem;
+    left: 15rem;
+    color: gray;
+}
+
+.status-box{
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+    position: absolute;
+    display: flex;
+    top: 23rem;
+    color: gray;
+    text-align: center;
+    align-items: center;
+    border-bottom: 2px solid gray;
+}
+
+.status-box>p{
+    margin-left: 5px;
+}
+
+.imp-info-pet{
+    border: 3px solid black;
+    position: absolute;
+    left: 15rem;
+    top: 13.5rem;
+    border-radius: 10px;
+    width: 350px;
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 30px;
+}
+
+.imp-info-pet>p{
+    font-family: 'Barlow', sans-serif;
+    font-size: 30px;
+    position: absolute;
+    top: 19rem;
+    left: 33%;
+}
+
+.status-info-pet-edit{
+    border: 2px solid black;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 30px;
+    position: absolute;
+    left: 40rem;
+    top: 13.5rem;
+    border-radius: 10px;
+    width: 575px;
+    height: 385px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.status-info-pet-edit>h2{
+    border-bottom: 2px solid gray;
+    padding: 10px;
+}
+
+.btn-box-pet{
+    position: absolute;
+    top: 26.7rem;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-box-pet>button{
+    background-color: white;
+    justify-self: center;
+    margin-top: 15px;
+    width: 170px;
+    height: 50px;
+    border: none;
+    font-family: 'Barlow', sans-serif;
+    color: rgb(84, 129, 233);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
+}
+
+.btn-box-pet>button:hover{
+    background-color: rgb(84, 129, 233);
+    color: white;
+}
+
+.box-btn-info-pet{
+    position: absolute;
+    top: 42rem;
+    left: 45.5rem;
+    display: flex;
+}
+
+.box-btn-info-pet>button{
+    width: 150px;
+    height: 50px;
+    border: 3px solid rgb(10, 134, 188);
+    font-family: 'Barlow', sans-serif;
+    border-radius: 6px;
+    color: rgb(10, 134, 188);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
+}
+
+.box-btn-info-pet>button:hover{
+    background-color: rgb(10, 134, 188);
+    color: white;
+}
+
+.return-pet-btn{
+    position: absolute;
+    top: 42rem;
+    left: 65rem;
+}
+
+.return-pet-btn>button{
+    width: 150px;
+    height: 50px;
+    border: 3px solid rgb(203, 48, 5);
+    font-family: 'Barlow', sans-serif;
+    border-radius: 6px;
+    color: rgb(203, 48, 5);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
+}
+
+.return-pet-btn>button:hover{
+    background-color: rgb(203, 48, 5);
+    color: white;
+}
+
+.comeback-btn-pet{
+    position: absolute;
+    top: 45rem;
+    left: 65rem;
+}
+
+.comeback-btn-pet>button{
+    width: 150px;
+    height: 50px;
+    border: 3px solid rgb(203, 48, 5);
+    font-family: 'Barlow', sans-serif;
+    border-radius: 6px;
+    color: rgb(203, 48, 5);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
+}
+
+.comeback-btn-pet>button:hover{
+    background-color: rgb(203, 48, 5);
+    color: white;
+}
+
+.box-information-change-info{
+    display: flex;
+    position: absolute;
+    top: 10rem;
+    left: 10rem;
+}
+
+.box-name-status{
+    position: absolute;
+    top: 35rem;
+    left: 18.5rem;
+    z-index: 3;
+}
+
+.box-breed-pet{
+    position: absolute;
+    left: 42rem;
+    top: 16.8rem;
+    z-index: 3;
+}
+
+.box-hypoallergenic{
+    position: absolute;
+    top: 16.8rem;
+    left: 60rem;
+    z-index: 3;
+}
+
+.box-edit-pet-btn{
+    position: absolute;
+    top: 45rem;
+    left: 45.5rem;
+}
+
+.box-edit-pet-btn>button{
+width: 150px;
+height: 50px;
+border: 3px solid rgb(35, 150, 81);
+font-family: 'Barlow', sans-serif;
+border-radius: 6px;
+color: rgb(35, 150, 81);
+cursor: pointer;
+transition: .3s;
+font-size: larger;
+}
+
+
+.box-edit-pet-btn>button:hover{
+    background-color: rgb(35, 150, 81);
+    color: white;
+}
+
+.box-edit-pet-btn>button:disabled{
+    cursor: not-allowed;
+    background-color: rgba(35, 150, 81, 0.546);
+}
+
+.succes-form-edit-pet{
+    position: absolute;
+    top: 41rem;
+    width: 550px;
+    left: 41rem;
+}
+
+.circular-edit-pet{
+    margin-left: 25px;
+}
+
+.input-edit{
+    position: absolute;
+    top: 29rem;
+    left: 15.2rem;
+}
+
+.input-edit>button{
+    display: block;
+    width: 150px;
+    height: 35px;
+    border: 3px solid rgb(5, 163, 203);
+    font-family: 'Barlow', sans-serif;
+    border-radius: 6px;
+    color: rgb(5, 163, 203);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
+    margin: 1rem 0 0 5rem;
+}
+
+.input-edit>button:hover{
+    background-color: rgb(5, 163, 203);
+    color: white;
+}
+
+.input-edit>button:disabled{
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.my-pet-pic-edit{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: 5rem;
+    margin-top: 2rem;
+}
+
+.succes-edit-pic{
+    position: absolute;
+    top: 25.5rem;
+    left: 15.3rem;
+    width: 340px;
+}

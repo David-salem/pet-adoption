@@ -1,4 +1,4 @@
-.profile-page{
+.profile-page-change{
     background-color: #FFFFFA;
     padding: 0;
     margin: 0;
@@ -6,22 +6,22 @@
     height: 100vh;
 }
 
-.profile-page>h1{
+.profile-page-change>h1{
     position: absolute;
     top: 7rem;
-    left: 10rem;
+    left: 13rem;
     font-family: 'Barlow', sans-serif;
 }
 
-.profile-page>p{
+.profile-page-change>p{
     position: absolute;
     top: 10rem;
-    left: 10rem;
+    left: 13rem;
     font-family: 'Barlow', sans-serif;
     color: gray;
 }
 
-.pic-profilepage{
+.pic-profilepage-change{
     position: absolute;
     top: 12rem;
     left: 50rem;
@@ -30,93 +30,103 @@
     font-family: 'Barlow', sans-serif;
 }
 
-.pic-profilepage>div{
+.pic-profilepage-change>div{
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
 }
 
-.pic-profilepage>h2{
+.pic-profilepage-change>h2{
     display: block;
 }
 
-.pic-profilepage>div>div>p{
-    display: block;
-    width: 200px;
-    margin: 20px;
-    padding-left: 10px;
-    border-radius: 10px;
-    background-color: #ff7f7d;
-    padding: 10px 10px 10px 40px;
-    cursor: pointer;
-    font-family: 'Barlow', sans-serif;
-    align-items: center;
-}
-
-.profile-page>form{
+.form-change{
     position: absolute;
+    top: 11rem;
     left: 13rem;
-    top: 13rem;
 }
 
-.form-profile-signin{
+.button-change{
     position: absolute;
     display: flex;
-    flex-direction: column;
+    top: 33rem;
+    left: 21rem;
+    padding: 20px 50px 10px 50px;
 }
 
-.form-profile-signin>label, .add-bio>label{
-    display: flex;
-    font-family: 'Rockwell';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-transform: capitalize;
-    margin: 0px;
-    color: gray;
-}
-
-.form-profile-signin>input{
-    width: 300px;
+.input-cancel-profile{
+    width: 150px;
     height: 50px;
-    margin: 10px;
-    padding: 10px;
-    outline: none;
-    color: black;
-    display: flex;
-    font-size: larger;
+    margin-top: 10px;
+    margin-left: 70px;
+    border: 3px solid rgb(236, 100, 100);
     font-family: 'Barlow', sans-serif;
+    border-radius: 6px;
+    color: rgb(236, 100, 100);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
 }
 
-.add-bio{
+.input-cancel-profile:hover{
+    background-color: #ec1313;
+    color: white;
+}
+
+.succes-form-change{
     position: absolute;
-    top: 12rem;
-    left: 38rem;
+    top: 30rem;
+    left: -1rem;
+    width: 350px;
+    border-radius: 5px;
 }
 
-.add-bio>textarea{
-    width: 380px;
-    height: 150px;
-    resize: none;
-    margin-top: 20px;
-    outline: none;
+.bio-form{
+    position: absolute;
+    top: 19rem;
+    left: 37rem;
+}
+
+.bio-form>textarea{
     font-family: 'Barlow', sans-serif;
     font-size: larger;
+    outline: none;
+    width: 300px;
+    height: 100px;
+    border-radius: 6px;
+    resize: none;
+    text-decoration: none;
     padding: 5px;
 }
 
-.input-submit-profile-change{
-    position: absolute;
-    top: 28rem;
-    left: 19rem;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: .3s;
+.bio-form>div{
+    font-size: 13px;
+    font-family: 'Rockwell';
+    color: #CC4D4C;
+    margin-top: 5px;
 }
 
-.input-submit-profile-change:hover{
-    background-color: black;
+.succes-change-pic{
+    position: absolute;
+    top: 14rem;
+    width: 300px;
+}
+
+.btn-change-picc{
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 3px solid rgb(100, 193, 236);
+    font-family: 'Barlow', sans-serif;
+    border-radius: 6px;
+    color: rgb(100, 193, 236);
+    cursor: pointer;
+    transition: .3s;
+    font-size: larger;
+}
+
+.btn-change-picc:hover{
+    background-color: rgb(100, 193, 236);
     color: white;
 }

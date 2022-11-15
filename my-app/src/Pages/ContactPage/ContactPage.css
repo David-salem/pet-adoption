@@ -78,6 +78,10 @@
     color: white;
 }
 
+.submit-contact-page:disabled{
+    cursor: not-allowed;
+}
+
 .loader-contact{
     position: absolute;
     top: 29rem;
