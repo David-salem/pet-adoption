@@ -27,7 +27,7 @@ export const UserProvider = ({ children }) => {
             console.log(u);
         })
         .catch(setPetInfo({}));
-    }
+    };
 
     useEffect(() => {
         if (isLogin) {

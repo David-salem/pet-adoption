@@ -11,4 +11,4 @@ module.exports.jwtVerify = (token) => {
     const payload = jwt.verify(token, process.env.SECRET_KEY);
     
     return payload;
-}
+};

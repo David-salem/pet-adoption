@@ -31,7 +31,6 @@ export const EditPet = () => {
             .then((val) => {
                 setPetInfo(val)
             })
-
     }
 
     useEffect(() => {
@@ -156,11 +155,6 @@ export const EditPet = () => {
                                         <Field name="Height" component={InputAddPet} />
                                         <Field name="Weight" component={InputAddPet} /> 
                                     </div>
-                                        {/* <Field name="njdsnf" component="select">
-                                            <option value="red">Red</option>
-                                            <option value="green">Green</option>
-                                            <option value="blue">Blue</option>
-                                        </Field> */}
                                     <div className="box-hypoallergenic">
                                         <Field name="Hypoallergenic" component={InputAddPet} />
                                         <div className="formik-input-container-add-pet">

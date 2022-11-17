@@ -12,3 +12,32 @@
     position: absolute;
     font-size: xx-large;
 }
+
+.owned-pets{
+    position: absolute;
+    top: 11rem;
+    left: 20rem;
+}
+
+.owned-pets>h3{
+    margin: 20px;
+    text-decoration: underline;
+}
+
+.btn-switch-pet{
+    font-family: 'Barlow', sans-serif;
+    position: absolute;
+    top: 9rem;
+    left: 63rem;
+    background-color: rgb(226, 80, 80);
+    color: white;
+    border-radius: 7px;
+    padding: 7px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-switch-pet:hover{
+    color: white;
+    border: 2px rgb(226, 80, 80);
+}

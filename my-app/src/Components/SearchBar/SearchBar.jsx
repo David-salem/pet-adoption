@@ -11,6 +11,7 @@ import { MultiActionAreaCard } from "../../Components";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
+import LinearProgress from '@mui/material/LinearProgress';
 
 export const SearchBar = () => {
     const [advance, setAdvance] = useState(false);
@@ -20,6 +21,7 @@ export const SearchBar = () => {
     const [height, setHeight] = useState([1, 50]);
     const [weight, setWeight] = useState([1, 50]);
     const [status, setStatus] = useState("Available");
+    const [loader, setLoader] = useState(false);
 
     const handleChangeHeight = (event, newValue) => {
         setHeight(newValue);
@@ -31,14 +33,16 @@ export const SearchBar = () => {
     
     const handleSearchAdvanced = (e) => {
         e.preventDefault();
+        setLoader(true);
+        setData([])
         if(advance)
         {fetchUrl(`/pets?Type=${type}&&Name=${text}&&AdoptionStatus=${status}&&Height=${height}&&Weight=${weight}`).then((val) => {
-            console.log(val)
             setData(val)});
+            setLoader(false);
         } else {
             fetchUrl(`/pets?Type=${type}`).then((val) => {
-                console.log(val)
                 setData(val)});
+                setLoader(false);
         }
     };
 
@@ -87,7 +91,7 @@ export const SearchBar = () => {
                                         onChange={ (e) => setStatus(e.target.value)}
                                         >
                                             <MenuItem selected={true} value="Available">Available</MenuItem>
-                                            <MenuItem value="Foster">Foster</MenuItem>
+                                            <MenuItem value="Fostered">Fostered</MenuItem>
                                             <MenuItem value="Adopted">Adopted</MenuItem>
                                         </Select>
                                     </div>
@@ -114,6 +118,7 @@ export const SearchBar = () => {
                                 </form>
                             </div>
                 }
+                    { loader && <div className="circular-search-petss"> <LinearProgress /> </div>}
             <div className="pet-card">
                     <Grid container spacing={1}>
                         { data.map((pet) => (

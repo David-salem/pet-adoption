@@ -5,6 +5,7 @@ const { jwtVerify } = require('./lib/JWT');
 const PORT = 4000;
 const { ValidRes, ErrNotAuthed, CreatedRes, ErrUserNotFound } = require('./lib/ResponseHandler');
 const { getUser } = require("./repo/users.repo");
+const url = require('url')
 
 // Middlewares
 app.use(express.json());
@@ -39,9 +40,9 @@ app.use((req, res, next) => {
 //auth middleware
 app.use(async(req, res, next) => {
     const authorized = ['/users/login', '/users/register', '/pets', '/pets/:id'];
-    
-    if (authorized.includes(req.url)) { 
-        return next();
+
+    if (authorized.includes(url.parse(req.url).pathname)){
+        return next()
     }
 
     const { authorization } = req.headers;

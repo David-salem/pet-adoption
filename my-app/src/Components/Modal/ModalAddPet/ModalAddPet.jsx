@@ -75,11 +75,6 @@ export const ModalAddPet = ({setOpenModal}) => {
                 title=" "
                 onChange={handleChangePic}
                 />
-                {/* <Button 
-                className="btn-load"
-                variant="contained"
-                disabled={loading || !photo} onClick={ handleUploadPic }
-                >update</Button> */}
             </div>
             <div>
             <Formik

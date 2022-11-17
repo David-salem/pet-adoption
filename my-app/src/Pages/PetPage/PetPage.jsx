@@ -1,12 +1,22 @@
 import "./PetPage.css";
 import { useEffect, useState, useContext } from "react";
 import { userContext } from '../../Context/userContext';
-import { fetchUrl } from "../../Lib/axios";
+import { fetchUrl, fetchUrlPost } from "../../Lib/axios";
 import { NavLink } from 'react-router-dom';
+import Alert from '@mui/material/Alert';
+
 
 export const PetPage = () => {
-    const { infoUser } = useContext(userContext);
+    const { infoUser, fetchMe } = useContext(userContext);
     const [petInfo, setPetInfo] = useState({});
+    const [foster, setFoster] = useState("")
+    const [adopt, setAdopt] = useState("")
+    const [save, setSave] = useState("")
+    const [unsave, setUnsave] = useState("")
+    const [returned, setReturned] = useState("")
+    const [succesMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+    const [petId, setPetId] = useState([]);
 
     const parsedUrl = (new URL(window.location.href)).toString();
     var url = parsedUrl.split( '/' );
@@ -19,13 +29,64 @@ export const PetPage = () => {
             fetchUrl(`/pets/${id}`)
                 .then((val) => {
                     setPetInfo(val)
-                    console.log(val)   
-                    if(val.AdoptionStatus === "Foster"){
+                    if(val.AdoptionStatus === "Fostered" ){
+                        setColor("red");
+                        setFoster("true");
+                    } else if(val.AdoptionStatus === "Adopted"){
+                        setFoster("true");
+                        setAdopt("true");
+                        setColor("red");
+                    } else if(val.AdoptionStatus === "Available"){
                         setColor("green")
-                    } else setColor("red")
+                    }
                 })
+        } if(infoUser.SavePets){
+            (infoUser.SavePets).map((info) => {
+                if(info._id === id)
+                {setSave("true")}
+            });
+        } if(infoUser.PetsOwn){
+            (infoUser.PetsOwn).map((info) => {
+                if(info._id === id)
+                {setReturned("true")}
+            })
         }
     }, [])
+
+    const handleAdopt = () => {
+        fetchUrlPost(`/pets/${id}/adopt`).then((val) => {
+            console.log(val)  
+            fetchMe()
+        }).catch((err) => { console.log(err)})
+    }
+
+    const handleFoster = () => {
+        fetchUrlPost(`/pets/${id}/foster`).then((val) => {
+            console.log(val)  
+            fetchMe()
+        })
+    }
+
+    const handleSave = () => {
+        fetchUrlPost(`/pets/${id}/save`).then((val) => {
+            console.log(val)  
+            fetchMe()
+        })
+    }
+
+    const handleReturn = () => {
+        fetchUrlPost(`/pets/${id}/return`).then((val) => {
+            console.log(val)  
+            fetchMe()
+        })
+    }
+
+    const handleUnsave = () => {
+        fetchUrlPost(`/pets/${id}/unsave`).then((val) => {
+            console.log(val)  
+            fetchMe()
+        })
+    }
 
     return(
         <div className="my-pets-page">
@@ -41,8 +102,8 @@ export const PetPage = () => {
                     <p style={{ color: color }} >{petInfo.AdoptionStatus}</p>
                 </div>
                 <div className="btn-box-pet">
-                    <button>Foster</button>
-                    <button>Adopt</button>
+                    <button  onClick={handleFoster} disabled={foster}>Foster</button>
+                    <button onClick={handleAdopt} disabled={adopt}>Adopt</button>
                 </div>
             </div>
             <div className="status-info-pet">
@@ -62,12 +123,18 @@ export const PetPage = () => {
                     </div>
                 </div>
             </div>
+            <div className="succes-form-info-pet">
+                {succesMessage && <Alert severity="success">{succesMessage}</Alert>}
+                {errorMessage && <Alert severity="error">{errorMessage}</Alert>}
+            </div>
             <div className="box-btn-info-pet">
-                <button>Save Pet</button>
-                <button>Unsave Pet</button>
+                {save ? <button onClick={handleUnsave}>Unsave Pet</button>
+                :
+                <button onClick={handleSave}>Save Pet</button>
+                }
             </div>
              <div className="return-pet-btn">
-                <button>Return Pet</button>
+                 {returned && <button onClick={handleReturn}>Return Pet</button>}
             </div>
             {infoUser.Permissions?.includes("admin") &&
             <NavLink to={route}>

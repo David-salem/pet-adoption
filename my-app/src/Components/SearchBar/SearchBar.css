@@ -103,3 +103,12 @@
 .name-adoption>h3{
     margin-top: 30px;
 }
+
+.circular-search-petss{
+    position: absolute;
+    top: 3rem;
+    left: 0rem;
+    z-index: 9999;
+    width: 800px;
+    background-color: red;
+}

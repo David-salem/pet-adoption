@@ -196,3 +196,15 @@
     background-color: rgba(22, 135, 2, 0.66);
     color: white;
 }
+
+.my-pets-page>div>div>button:disabled, .my-pets-page>div>button:disabled{
+    cursor: not-allowed;
+    background-color: black;
+}
+
+.succes-form-info-pet{
+    position: absolute;
+    top: 38.7rem;
+    width: 550px;
+    left: 41rem;
+}
